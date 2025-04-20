@@ -8,7 +8,7 @@ pipeline {
          }    
          stage('clone git'){ 
               steps {
-                sh "git clone https://github.com/medsrc/projet-github-jenkins.git"
+                sh branch: 'main', credentialsId: 'github', url:  "https://github.com/medsrc/projet-github-jenkins.git"
               }           
          }          
     }
