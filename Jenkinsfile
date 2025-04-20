@@ -3,7 +3,7 @@ pipeline {
     stages {    
         stage('cleanUp Workspace'){    
             steps {
-                cleanWs()
+                deleteDir()
             }       
          }    
          stage('clone git'){ 
