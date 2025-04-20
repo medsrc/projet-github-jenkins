@@ -1,11 +1,17 @@
 pipeline {
     agent any 
-    stages {
-        stage('clone git'){
+    stages {    
+        stage('cleanUp Workspace'){    
             steps {
-               sh  "rm -rf projet-github-jenkins"
-               sh "git clone https://github.com/medsrc/projet-github-jenkins.git"
+                cleanWs()
+              ### deleteDir()
+              ### sh  "rm -rf projet-github-jenkins"
+            }    
+         stage('clone git'){ 
+              steps {
+                sh "git clone https://github.com/medsrc/projet-github-jenkins.git"
+              }           
             }
-        }
+        }        
     }
 }
